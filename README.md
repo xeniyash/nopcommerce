@@ -1,10 +1,3 @@
-## Table of contents
-1. [Setup] (#setup)
-2. [Run tests] (#)
-3. [Reports] (#)
-4. [Cypress dashboard] (#)
-5. [Postman]
-
 # Setup your environment
 
 Note: all commands in this README.md are for MacOS, commands for other operation will be provided later
