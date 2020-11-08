@@ -1,6 +1,7 @@
 # Setup your environment
 
-Note: all commands in this README.md are for MacOS, commands for other operation will be provided later
+Note: all commands in this README.md are for MacOS, commands for other operation systems will be provided later
+
 TODO: Add commands for Windows and Linux  
 
 - install brew: 
