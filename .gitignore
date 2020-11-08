@@ -3,3 +3,11 @@ build
 coverage
 .idea/
 .vscode/
+
+
+# puching these folders into remote just to show what I have locally after test run
+# cypress/videos
+# cypress/screenshots
+# cypress/reports
+# postman/newman
+
