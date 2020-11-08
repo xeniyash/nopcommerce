@@ -1,0 +1,22 @@
+{
+    "projectId": "5kqoo5",
+    "chromeWebSecurity": false,
+    "viewportWidth": 1600,
+    "viewportHeight": 1200,
+    "baseUrl": "https://demo.nopcommerce.com/",
+    "env": {
+        "username": "",
+        "password": ""
+    },
+    "reporter": "./node_modules/mochawesome/src/mochawesome.js",
+    "reporterOptions": {
+      "reportDir": "cypress/reports/separate-reports",
+      "overwrite": false,
+      "html": false,
+      "json": true
+    },
+    "retries": {
+      "runMode": 2,
+      "openMode": 0
+  }
+}

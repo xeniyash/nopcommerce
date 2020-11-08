@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "44635978-4d8c-4912-9090-b19e7930d9b6",
+		"name": "nopcommerce_egression_suite",
+		"description": "This testing suite is for checking API calls to the backend to make sure that backend is providing data to frontend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "computers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "99c58017-466e-466d-a703-3608063968fc",
+						"exec": [
+							"const response_time = Number(pm.environment.get(\"response_time\"));",
+							"",
+							"pm.test(\"Response time is less than\" + response_time + \"ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(response_time);",
+							"});",
+							"",
+							"pm.test(\"Response contain Lenovo computers\", function() {",
+							"    pm.expect(pm.response.text()).to.include(\"Show details for Lenovo IdeaCentre 600 All-in-One PC\")",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authority",
+						"value": "demo.nopcommerce.com"
+					},
+					{
+						"key": "upgrade-insecure-requests",
+						"value": "1"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36"
+					},
+					{
+						"key": "accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "navigate"
+					},
+					{
+						"key": "sec-fetch-user",
+						"value": "?1"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "iframe"
+					},
+					{
+						"key": "referer",
+						"value": "https://demo.nopcommerce.com/search?q=jhloho"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,fr;q=0.6"
+					},
+					{
+						"key": "cookie",
+						"value": "__cfduid=d8228f9977842c41a7096706dc54c824b1604694048; .Nop.Antiforgery=CfDJ8NJzpPdWJDZGtf_4GVVpZ2lCNI-V_3KCjOr_z-EPp27cRQOwvyM8fdfzLeHrbciZSfynYD6Zs09bjAldAt13nTdWfb_Y_A1s0Kdz-NvQ94kwY-Xl-Hiit9uy6CfV1h1tNc7iRI8ATQJ0pPsUnTgPQZk; .Nop.RecentlyViewedProducts=3%2C9; .Nop.Customer=573fac83-9396-4083-923e-117811a958ce"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/computers",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"computers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "99aef024-6112-44f0-ad90-9f44af82004c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7b06902c-f72e-4332-9826-6b027762db94",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,152 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2020-11-08T03:32:10.825Z",
+    "end": "2020-11-08T03:32:27.717Z",
+    "duration": 16892,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "62763af7-aaf2-4c27-ac20-600d231a823d",
+      "title": "",
+      "fullFile": "cypress/integration/searchPage/basic_search.spec.js",
+      "file": "cypress/integration/searchPage/basic_search.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5b3f451e-cc54-4e48-abca-423b69bf1e17",
+          "title": "Basic serach field",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be visible on the main page with label: Search item",
+              "fullTitle": "Basic serach field should be visible on the main page with label: Search item",
+              "timedOut": null,
+              "duration": 4401,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#small-search-box-form\").should(\"be.visible\");\ncy.get(\"#small-searchterms\").attribute(\"aria-label\").should(\"contain\", \"Search item\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected 'Search store' to include 'Search item'",
+                "estack": "AssertionError: Timed out retrying: expected 'Search store' to include 'Search item'\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/searchPage/basic_search.spec.js:107:58)",
+                "diff": null
+              },
+              "uuid": "cb4d9af1-2d3d-4a92-a00c-916a7fec7309",
+              "parentUUID": "5b3f451e-cc54-4e48-abca-423b69bf1e17",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show Alert with message 'Please enter some search keyword' if user is searching for less then 1 letter",
+              "fullTitle": "Basic serach field should show Alert with message 'Please enter some search keyword' if user is searching for less then 1 letter",
+              "timedOut": null,
+              "duration": 288,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#small-searchterms\").clear();\nvar stub = cy.stub();\ncy.on(\"window:alert\", stub);\ncy.get(\"input[type='submit']\").click().then(function () {\n  expect(stub.getCall(0)).to.be.calledWith(\"Please enter some search keyword\");\n});",
+              "err": {},
+              "uuid": "75bd57db-3bed-4ded-a6e8-7bf42a00bebc",
+              "parentUUID": "5b3f451e-cc54-4e48-abca-423b69bf1e17",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error if user is searching for 1 letter",
+              "fullTitle": "Basic serach field should show error if user is searching for 1 letter",
+              "timedOut": null,
+              "duration": 472,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#small-searchterms\").type(\"t\");\ncy.get(\"input[type='submit']\").should(\"be.enabled\").click();\ncy.get(\".warning\").text().then(function (el) {\n  expect(\"Search term minimum length is 1 characters\", \"Expected values are not match with actual values\").contains(el);\n}); // .should(\"contain\", \"Search term minimum length is 1 characters\");",
+              "err": {
+                "message": "CypressError: `cy.click()` can only be called on a single element. Your subject contained 2 elements. Pass `{ multiple: true }` if you want to serially click each element.\n\nhttps://on.cypress.io/click",
+                "estack": "CypressError: `cy.click()` can only be called on a single element. Your subject contained 2 elements. Pass `{ multiple: true }` if you want to serially click each element.\n\nhttps://on.cypress.io/click\n    at mouseAction (https://demo.nopcommerce.com/__cypress/runner/cypress_runner.js:152011:17)\n    at Context.click (https://demo.nopcommerce.com/__cypress/runner/cypress_runner.js:152185:14)\n    at Context.<anonymous> (https://demo.nopcommerce.com/__cypress/runner/cypress_runner.js:169891:21)\nFrom Your Spec Code:\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/searchPage/basic_search.spec.js:121:57)",
+                "diff": null
+              },
+              "uuid": "90ec6ec4-ea5c-43db-9dae-bd8bc00e9d7d",
+              "parentUUID": "5b3f451e-cc54-4e48-abca-423b69bf1e17",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "75bd57db-3bed-4ded-a6e8-7bf42a00bebc"
+          ],
+          "failures": [
+            "cb4d9af1-2d3d-4a92-a00c-916a7fec7309",
+            "90ec6ec4-ea5c-43db-9dae-bd8bc00e9d7d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5161,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/separate-reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

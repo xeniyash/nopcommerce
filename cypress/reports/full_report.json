@@ -1,0 +1,462 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 12,
+    "passes": 5,
+    "pending": 0,
+    "failures": 7,
+    "start": "2020-11-08T03:31:20.889Z",
+    "end": "2020-11-08T03:32:34.567Z",
+    "duration": 18433,
+    "testsRegistered": 12,
+    "passPercent": 41.666666666666664,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1bf83dfd-d0db-4298-a247-fc66ad3447d6",
+      "title": "",
+      "fullFile": "cypress/integration/searchPage/advanced_search.spec.js",
+      "file": "cypress/integration/searchPage/advanced_search.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d1ee49e7-b606-4b40-affd-3cf7a03d0a6b",
+          "title": "Advineced search page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should click on Advanced search checkbox",
+              "fullTitle": "Advineced search page should click on Advanced search checkbox",
+              "timedOut": null,
+              "duration": 1645,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#adv\").check();",
+              "err": {},
+              "uuid": "7b41b49b-96dd-476e-9b24-64f049d721d6",
+              "parentUUID": "d1ee49e7-b606-4b40-affd-3cf7a03d0a6b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should contain category dropdown with sorted items",
+              "fullTitle": "Advineced search page should contain category dropdown with sorted items",
+              "timedOut": null,
+              "duration": 435,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"label\").contains(\"Category:\").should(\"be.visible\");\ncy.get(\"#cid > option\").then(function (el) {\n  var unsortedItems = el.map(function (index, html) {\n    return Cypress.$(html).text();\n  }).get();\n  var sortedItems = unsortedItems.slice().sort();\n  expect(unsortedItems, \"Items aren't sorted\").to.deep.equal(sortedItems);\n});",
+              "err": {
+                "message": "AssertionError: Items aren't sorted: expected [ Array(17) ] to deeply equal [ Array(17) ]",
+                "estack": "AssertionError: Items aren't sorted: expected [ Array(17) ] to deeply equal [ Array(17) ]\n    at Object.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/searchPage/advanced_search.spec.js:116:60)\n    at executeFn (https://demo.nopcommerce.com/__cypress/tests?p=cypress/support/index.js:1140:22)\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/support/index.js:1153:12)",
+                "diff": " [ 'All',\n+   'Apparel',\n+   'Apparel >> Accessories',\n+   'Apparel >> Clothing',\n+   'Apparel >> Shoes',\n+   'Books',\n   'Computers',\n   'Computers >> Desktops',\n   'Computers >> Notebooks',\n   'Computers >> Software',\n+   'Digital downloads',\n   'Electronics',\n   'Electronics >> Camera & photo',\n   'Electronics >> Cell phones',\n   'Electronics >> Others',\n-   'Apparel',\n-   'Apparel >> Shoes',\n-   'Apparel >> Clothing',\n-   'Apparel >> Accessories',\n-   'Digital downloads',\n-   'Books',\n-   'Jewelry',\n-   'Gift Cards' ]\n+   'Gift Cards',\n+   'Jewelry' ]\n"
+              },
+              "uuid": "62c15a53-53b6-492a-9c7a-cc83fcd02824",
+              "parentUUID": "d1ee49e7-b606-4b40-affd-3cf7a03d0a6b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should contain Automatically search sub-categories checkbox",
+              "fullTitle": "Advineced search page should contain Automatically search sub-categories checkbox",
+              "timedOut": null,
+              "duration": 4345,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"label\").contains(\"Automatically search-sub categories\").should(\"be.visible\");\ncy.get(\"#isc\").check().should('be.checked');",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find content: 'Automatically search-sub categories' within the element: [ <label>, 6 more... ] but never did.",
+                "estack": "AssertionError: Timed out retrying: Expected to find content: 'Automatically search-sub categories' within the element: [ <label>, 6 more... ] but never did.\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/searchPage/advanced_search.spec.js:122:69)",
+                "diff": null
+              },
+              "uuid": "1c60098f-89c3-41a6-9579-615361e38036",
+              "parentUUID": "d1ee49e7-b606-4b40-affd-3cf7a03d0a6b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should contain Manufacturer dropdown with values: [All, Apple, Lenovo, Nokia, Our brand]",
+              "fullTitle": "Advineced search page should contain Manufacturer dropdown with values: [All, Apple, Lenovo, Nokia, Our brand]",
+              "timedOut": null,
+              "duration": 457,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"label\").contains(\"Manufacturer:\").should(\"be.visible\");\nvar expectedListOfElements = [\"All\", \"Apple\", \"Lenovo\", \"Nokia\", \"Our brand\"];\ncy.dropdownCheck(\"#mid > option\", expectedListOfElements);",
+              "err": {
+                "message": "AssertionError: Expected values are not match with actual values: expected [ Array(5) ] to deeply equal [ 'All', 'Apple', 'HP', 'Nike' ]",
+                "estack": "AssertionError: Expected values are not match with actual values: expected [ Array(5) ] to deeply equal [ 'All', 'Apple', 'HP', 'Nike' ]\n    at Object.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/support/index.js:613:86)\n    at executeFn (https://demo.nopcommerce.com/__cypress/tests?p=cypress/support/index.js:1140:22)\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/support/index.js:1153:12)",
+                "diff": "- [ 'All', 'Apple', 'Lenovo', 'Nokia', 'Our brand' ]\n+ [ 'All', 'Apple', 'HP', 'Nike' ]\n"
+              },
+              "uuid": "0f76b51f-1fcb-4181-a7a7-ed69d01cb053",
+              "parentUUID": "d1ee49e7-b606-4b40-affd-3cf7a03d0a6b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should contain sertain values in the Sort by dropdown",
+              "fullTitle": "Advineced search page should contain sertain values in the Sort by dropdown",
+              "timedOut": null,
+              "duration": 41,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var expectedListOfElements = [\"Position\", \"Name: A to Z\", \"Name: Z to A\", \"Price: Low to High\", \"Price: High to Low\", \"Created on\"];\ncy.dropdownCheck(\"#products-orderby > option\", expectedListOfElements);",
+              "err": {},
+              "uuid": "d91a1fbf-b713-4784-9541-536e5e02348f",
+              "parentUUID": "d1ee49e7-b606-4b40-affd-3cf7a03d0a6b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should contain certain values in results per page dropdown",
+              "fullTitle": "Advineced search page should contain certain values in results per page dropdown",
+              "timedOut": null,
+              "duration": 374,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "var expectedNumberOfElementsPerPage = [\"10\", \"20\", \"50\", \"100\"];\ncy.dropdownCheck(\"#products-pagesize > option\", expectedNumberOfElementsPerPage);",
+              "err": {
+                "message": "AssertionError: Expected values are not match with actual values: expected [ '10', '20', '50', '100' ] to deeply equal [ '3', '6', '9', '18' ]",
+                "estack": "AssertionError: Expected values are not match with actual values: expected [ '10', '20', '50', '100' ] to deeply equal [ '3', '6', '9', '18' ]\n    at Object.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/support/index.js:613:86)\n    at executeFn (https://demo.nopcommerce.com/__cypress/tests?p=cypress/support/index.js:1140:22)\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/support/index.js:1153:12)",
+                "diff": "- [ '10', '20', '50', '100' ]\n+ [ '3', '6', '9', '18' ]\n"
+              },
+              "uuid": "02e9e800-8e0a-42cb-862c-84ce1b53092e",
+              "parentUUID": "d1ee49e7-b606-4b40-affd-3cf7a03d0a6b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7b41b49b-96dd-476e-9b24-64f049d721d6",
+            "d91a1fbf-b713-4784-9541-536e5e02348f"
+          ],
+          "failures": [
+            "62c15a53-53b6-492a-9c7a-cc83fcd02824",
+            "1c60098f-89c3-41a6-9579-615361e38036",
+            "0f76b51f-1fcb-4181-a7a7-ed69d01cb053",
+            "02e9e800-8e0a-42cb-862c-84ce1b53092e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7297,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "90648821-1e48-4dc0-a29a-363b7ba7ff78",
+      "title": "",
+      "fullFile": "cypress/integration/searchPage/basic_search_iframe.spec.js",
+      "file": "cypress/integration/searchPage/basic_search_iframe.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0e08aad7-6ecc-4248-885b-4e39df527b0f",
+          "title": "Basic serach field",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be visible on the main page with label: Search item",
+              "fullTitle": "Basic serach field should be visible on the main page with label: Search item",
+              "timedOut": null,
+              "duration": 4440,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "getIframeBody().find(\"#small-search-box-form\").should(\"be.visible\");\ngetIframeBody().find(\"#small-searchterms\").attribute(\"aria-label\").should(\"contain\", \"Search item\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected 'Search store' to include 'Search item'",
+                "estack": "AssertionError: Timed out retrying: expected 'Search store' to include 'Search item'\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/searchPage/basic_search_iframe.spec.js:114:72)",
+                "diff": null
+              },
+              "uuid": "7bd799fd-95be-42fa-ab8a-90c52865413a",
+              "parentUUID": "0e08aad7-6ecc-4248-885b-4e39df527b0f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error if user is searching for less or equal to 1 letter",
+              "fullTitle": "Basic serach field should show error if user is searching for less or equal to 1 letter",
+              "timedOut": null,
+              "duration": 275,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "getIframeBody().find(\"#small-searchterms\").type(\"t\");\ngetIframeBody().find(\"input[type='submit']\").click();",
+              "err": {},
+              "uuid": "07475e49-451c-4e1f-9ef6-a8ff44032d79",
+              "parentUUID": "0e08aad7-6ecc-4248-885b-4e39df527b0f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "07475e49-451c-4e1f-9ef6-a8ff44032d79"
+          ],
+          "failures": [
+            "7bd799fd-95be-42fa-ab8a-90c52865413a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4715,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "62763af7-aaf2-4c27-ac20-600d231a823d",
+      "title": "",
+      "fullFile": "cypress/integration/searchPage/basic_search.spec.js",
+      "file": "cypress/integration/searchPage/basic_search.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5b3f451e-cc54-4e48-abca-423b69bf1e17",
+          "title": "Basic serach field",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be visible on the main page with label: Search item",
+              "fullTitle": "Basic serach field should be visible on the main page with label: Search item",
+              "timedOut": null,
+              "duration": 4401,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#small-search-box-form\").should(\"be.visible\");\ncy.get(\"#small-searchterms\").attribute(\"aria-label\").should(\"contain\", \"Search item\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected 'Search store' to include 'Search item'",
+                "estack": "AssertionError: Timed out retrying: expected 'Search store' to include 'Search item'\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/searchPage/basic_search.spec.js:107:58)",
+                "diff": null
+              },
+              "uuid": "cb4d9af1-2d3d-4a92-a00c-916a7fec7309",
+              "parentUUID": "5b3f451e-cc54-4e48-abca-423b69bf1e17",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show Alert with message 'Please enter some search keyword' if user is searching for less then 1 letter",
+              "fullTitle": "Basic serach field should show Alert with message 'Please enter some search keyword' if user is searching for less then 1 letter",
+              "timedOut": null,
+              "duration": 288,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#small-searchterms\").clear();\nvar stub = cy.stub();\ncy.on(\"window:alert\", stub);\ncy.get(\"input[type='submit']\").click().then(function () {\n  expect(stub.getCall(0)).to.be.calledWith(\"Please enter some search keyword\");\n});",
+              "err": {},
+              "uuid": "75bd57db-3bed-4ded-a6e8-7bf42a00bebc",
+              "parentUUID": "5b3f451e-cc54-4e48-abca-423b69bf1e17",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error if user is searching for 1 letter",
+              "fullTitle": "Basic serach field should show error if user is searching for 1 letter",
+              "timedOut": null,
+              "duration": 472,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"#small-searchterms\").type(\"t\");\ncy.get(\"input[type='submit']\").should(\"be.enabled\").click();\ncy.get(\".warning\").text().then(function (el) {\n  expect(\"Search term minimum length is 1 characters\", \"Expected values are not match with actual values\").contains(el);\n}); // .should(\"contain\", \"Search term minimum length is 1 characters\");",
+              "err": {
+                "message": "CypressError: `cy.click()` can only be called on a single element. Your subject contained 2 elements. Pass `{ multiple: true }` if you want to serially click each element.\n\nhttps://on.cypress.io/click",
+                "estack": "CypressError: `cy.click()` can only be called on a single element. Your subject contained 2 elements. Pass `{ multiple: true }` if you want to serially click each element.\n\nhttps://on.cypress.io/click\n    at mouseAction (https://demo.nopcommerce.com/__cypress/runner/cypress_runner.js:152011:17)\n    at Context.click (https://demo.nopcommerce.com/__cypress/runner/cypress_runner.js:152185:14)\n    at Context.<anonymous> (https://demo.nopcommerce.com/__cypress/runner/cypress_runner.js:169891:21)\nFrom Your Spec Code:\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/searchPage/basic_search.spec.js:121:57)",
+                "diff": null
+              },
+              "uuid": "90ec6ec4-ea5c-43db-9dae-bd8bc00e9d7d",
+              "parentUUID": "5b3f451e-cc54-4e48-abca-423b69bf1e17",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "75bd57db-3bed-4ded-a6e8-7bf42a00bebc"
+          ],
+          "failures": [
+            "cb4d9af1-2d3d-4a92-a00c-916a7fec7309",
+            "90ec6ec4-ea5c-43db-9dae-bd8bc00e9d7d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5161,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9f430587-aad5-45d5-a617-b2108031f883",
+      "title": "",
+      "fullFile": "cypress/integration/smoke_tests/logo_check.spec.js",
+      "file": "cypress/integration/smoke_tests/logo_check.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "14148a4b-0d54-47d2-938f-d50437b51d4d",
+          "title": "Main page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should contain Logo",
+              "fullTitle": "Main page should contain Logo",
+              "timedOut": null,
+              "duration": 1260,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"a\").find(\"img\").should(\"have.attr\", \"src\").should(\"include\", \"logo.png\");",
+              "err": {},
+              "uuid": "4f15f8c2-ebdf-426b-83da-cb1e857db189",
+              "parentUUID": "14148a4b-0d54-47d2-938f-d50437b51d4d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4f15f8c2-ebdf-426b-83da-cb1e857db189"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1260,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/separate-reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

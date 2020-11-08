@@ -1,0 +1,36 @@
+{
+  "name": "unity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress-run": "cypress run --record --key 723de123-f213-494a-9a57-a571a8ae558b",
+    "cypress-open": "cypress open",
+    "clean-reports": "rm -rf cypress/reports",
+    "test": "npx cypress run",
+    "merge-report": "npx mochawesome-merge cypress/reports/separate-reports/*.json -o cypress/reports/full_report.json",
+    "generate-report": "npx mochawesome-report-generator --reportDir cypress/reports cypress/reports/full_report.json",
+    "after:tests": "npm run merge-report; npm run generate-report",
+    "cypress": "npm run clean-reports; npm run cypress-run; npm run after:tests"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^5.5.0",
+    "eslint": "^7.13.0",
+    "eslint-plugin-chai-friendly": "^0.6.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0",
+    "newman": "^5.2.1",
+    "newman-reporter-htmlextra": "^1.19.4"
+  },
+  "dependencies": {
+    "cypress-commands": "^1.1.0",
+    "ls": "^0.2.1",
+    "rimraf": "^3.0.2",
+    "yargs": "^16.1.0"
+  }
+}

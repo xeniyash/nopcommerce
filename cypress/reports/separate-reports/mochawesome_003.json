@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-11-08T03:32:33.265Z",
+    "end": "2020-11-08T03:32:34.567Z",
+    "duration": 1302,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9f430587-aad5-45d5-a617-b2108031f883",
+      "title": "",
+      "fullFile": "cypress/integration/smoke_tests/logo_check.spec.js",
+      "file": "cypress/integration/smoke_tests/logo_check.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "14148a4b-0d54-47d2-938f-d50437b51d4d",
+          "title": "Main page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should contain Logo",
+              "fullTitle": "Main page should contain Logo",
+              "timedOut": null,
+              "duration": 1260,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\"a\").find(\"img\").should(\"have.attr\", \"src\").should(\"include\", \"logo.png\");",
+              "err": {},
+              "uuid": "4f15f8c2-ebdf-426b-83da-cb1e857db189",
+              "parentUUID": "14148a4b-0d54-47d2-938f-d50437b51d4d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4f15f8c2-ebdf-426b-83da-cb1e857db189"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1260,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/separate-reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

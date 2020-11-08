@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-11-08T03:31:46.821Z",
+    "end": "2020-11-08T03:32:05.546Z",
+    "duration": 18725,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "90648821-1e48-4dc0-a29a-363b7ba7ff78",
+      "title": "",
+      "fullFile": "cypress/integration/searchPage/basic_search_iframe.spec.js",
+      "file": "cypress/integration/searchPage/basic_search_iframe.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0e08aad7-6ecc-4248-885b-4e39df527b0f",
+          "title": "Basic serach field",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be visible on the main page with label: Search item",
+              "fullTitle": "Basic serach field should be visible on the main page with label: Search item",
+              "timedOut": null,
+              "duration": 4440,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "getIframeBody().find(\"#small-search-box-form\").should(\"be.visible\");\ngetIframeBody().find(\"#small-searchterms\").attribute(\"aria-label\").should(\"contain\", \"Search item\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying: expected 'Search store' to include 'Search item'",
+                "estack": "AssertionError: Timed out retrying: expected 'Search store' to include 'Search item'\n    at Context.eval (https://demo.nopcommerce.com/__cypress/tests?p=cypress/integration/searchPage/basic_search_iframe.spec.js:114:72)",
+                "diff": null
+              },
+              "uuid": "7bd799fd-95be-42fa-ab8a-90c52865413a",
+              "parentUUID": "0e08aad7-6ecc-4248-885b-4e39df527b0f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error if user is searching for less or equal to 1 letter",
+              "fullTitle": "Basic serach field should show error if user is searching for less or equal to 1 letter",
+              "timedOut": null,
+              "duration": 275,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "getIframeBody().find(\"#small-searchterms\").type(\"t\");\ngetIframeBody().find(\"input[type='submit']\").click();",
+              "err": {},
+              "uuid": "07475e49-451c-4e1f-9ef6-a8ff44032d79",
+              "parentUUID": "0e08aad7-6ecc-4248-885b-4e39df527b0f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "07475e49-451c-4e1f-9ef6-a8ff44032d79"
+          ],
+          "failures": [
+            "7bd799fd-95be-42fa-ab8a-90c52865413a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4715,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/separate-reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
