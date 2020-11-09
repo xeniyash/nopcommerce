@@ -26,7 +26,7 @@ TODO: Add commands for Windows and Linux
 
   For running tests locally with browser execute: `yarn cypress-open`
 
-  For running tests locally in headless mode excecute: `yarn cypress-run`
+  For running tests locally in headless mode execute: `yarn cypress-run`
 
   For running tests with reports and integration with cypress dashboard execute: 
   `yarn cypress`
@@ -35,7 +35,7 @@ TODO: Add commands for Windows and Linux
 
 There are several types of reports setuped:
 
-1. Report in HTML format: `cypress/reports/full_report.html` - this reposrt creates automatecally after each test run. For the future timestemp can be added to the report so we'll get history.
+1. Report in HTML format: `cypress/reports/full_report.html` - this report creates automatically after each test run. For the future timestamp can be added to the report so we'll get history.
 
 2. Cypress Dashboard: https://dashboard.cypress.io/organizations/305fc879-92ae-4762-8a76-fbe5f966a0bc/projects
 
@@ -47,26 +47,24 @@ There are several types of reports setuped:
 
 # Technical details
 
-In the beginning I notticed that entire ui for `https://frontend.nopcommerce.com/` are hidden in iFrame so I've started implementing work around which is perfectly working, you can see this solution in the `cypress/integration/searchPage/basic_search_iframe.spec.js`
+In the beginning I noticed that entire ui for `https://frontend.nopcommerce.com/` are hidden in iFrame so I've started implementing work around which is perfectly working, you can see this solution in the `cypress/integration/searchPage/basic_search_iframe.spec.js`
 
-But then I notticed that I can use `https://demo.nopcommerce.com/` whithout iFrame so all other tests were written against `https://demo.nopcommerce.com/`
-
-
+But then I noticed that I can use `https://demo.nopcommerce.com/` without iFrame so all other tests were written against `https://demo.nopcommerce.com/`
 
 
 # Postman regression testing suite
 
-UI tests can be flaky due to many resons:
+UI tests can be flaky due to many reasons:
 
 - environment issues
 - connection issues
-- complecated test login with a lot of redundunt steps
+- complicated test login with a lot of redundant steps
 - etc
 
 Functionality on a UI side can be also tested through UI API calls, as an example I've created simple postman collection with one test which is checking computers/ endpoint.
 For better visibility `nopcommerce_regression_suite.postman_collection.json` should be imported into Postman app:
 
-1. Intall postman on you machine: instructions can be found here: https://learning.postman.com/docs/getting-started/installation-and-updates/
+1. Install postman on you machine: instructions can be found here: https://learning.postman.com/docs/getting-started/installation-and-updates/
 
 2. Open Postman > Import > Choose file > `nopcommerce_regression_suite.postman_collection.json` and `demo.nopcommerce.com.postman_environment`
 
