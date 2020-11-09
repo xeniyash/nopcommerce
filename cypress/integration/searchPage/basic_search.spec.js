@@ -36,7 +36,7 @@ describe("Basic serach field", () => {
     cy.get(".warning")
       .text()
       .then((el) => {
-        expect("Search term minimum length is 1 characters", "Expected values are not match with actual values").contains(el);
+        expect("Search term minimum length is 1 character", "Expected values are not match with actual values").contains(el);
       });
       // .should("contain", "Search term minimum length is 1 characters");
   });

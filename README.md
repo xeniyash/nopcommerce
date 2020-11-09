@@ -22,6 +22,13 @@ TODO: Add commands for Windows and Linux
 
 # Run tests  
 
+  All tests are in `cypress/integration/` folder
+
+  For running tests locally with browser execute: `yarn cypress-open`
+
+  For running tests locally in headless mode excecute: `yarn cypress-run`
+
+  For running tests with reports and integration with cypress dashboard execute: 
   `yarn cypress`
 
 # Reports
@@ -37,6 +44,15 @@ There are several types of reports setuped:
   - but it cost money :(
 
 3. As an option we also can do integration with Test Rail tool which can provide us nice and explicit reports, so in each Jira ticket we can see test cases from Test Rail and result if those tests failed/passed. Also Test Rail provides test coverage report. Has integration with CD pipeline as well
+
+# Technical details
+
+In the beginning I notticed that entire ui for `https://frontend.nopcommerce.com/` are hidden in iFrame so I've started implementing work around which is perfectly working, you can see this solution in the `cypress/integration/searchPage/basic_search_iframe.spec.js`
+
+But then I notticed that I can use `https://demo.nopcommerce.com/` whithout iFrame so all other tests were written against `https://demo.nopcommerce.com/`
+
+
+
 
 # Postman regression testing suite
 
