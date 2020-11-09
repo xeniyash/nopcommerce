@@ -39,7 +39,7 @@ There are several types of reports setuped:
 
 2. Cypress Dashboard: https://dashboard.cypress.io/organizations/305fc879-92ae-4762-8a76-fbe5f966a0bc/projects
 
-  - invite to the cypress dashboard was sent to: marcelo.leite@unity3d.com 
+  - invite to the cypress dashboard was sent to Marcelo email(I was just guessing) 
   - cypress dashboard provides dicent amount of statistics, shuch as: Run status, Run duration, Test suite seze, Top failures, Slowest tests, Most common errors, Flaky tests
   - but it cost money :(
 
